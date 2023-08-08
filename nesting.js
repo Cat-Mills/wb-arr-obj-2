@@ -50,8 +50,16 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
-
+function employeeUpdater(){
+  return employees.filter((employee) =>{
+    if(employee.firstName === "Lorie"){
+      employee.department = "HR"
+    }
+    if(employee.firstName !== "Theo"){
+      return employee
+    }
+  })
+}
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -66,7 +74,9 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(){
+
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -132,7 +142,11 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  myCar.accidents.forEach((record,i)=>{
+    myCar.accidents[i].atFaultForAccident = false
+  })
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -153,4 +167,40 @@ var numsArr = [
     4. Return the modified numsArr.
 */
 
-//Code Here
+const looper = () => {
+  for(let i = 0; i < numsArr.length; i++){
+    for(let j = 0; j < numsArr[i].length; j++){
+      if(numsArr[i][j] % 2 === 0){
+        numsArr[i].splice(j, 1, 'even')
+      } else {
+        numsArr[i].splice(j, 1, 'odd')
+      }
+    }
+  }
+  return numsArr
+}
+
+//Didn't work
+// function looper (){
+//   const newArr = []
+//   for(let i = 0; i < numsArr.length; i++){
+//     newArr.push([])
+//     for(let j=0;j<numsArr[i].length; j++){
+//       if(numsArr[i][j] % 2 === 0){
+//         numsArr[i][j] = "even"
+//       } else {
+//         numsArr[i][j] = "odd"
+//       }
+//     }
+//   }
+// }
+
+
+//Didn't work
+// function looper() {
+//   const newArr = numsArr.map((arr) =>{
+//     arr.forEach((num,i) =>{
+//       num % 2 === 0? num[i] = "even": num[i] = "odd"
+//     })
+//   })
+// }
